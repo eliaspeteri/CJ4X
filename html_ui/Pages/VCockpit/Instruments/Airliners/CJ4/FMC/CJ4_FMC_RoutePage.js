@@ -86,14 +86,14 @@ class CJ4_FMC_RoutePage {
             };
         }
         fmc.setTemplate([
-            ["RTE 1", "1", pageCount.toFixed(0)],
-            ["ORIGIN", "DEST"],
+            ["ACT FPLN[color]blue", "1", pageCount.toFixed(0)],
+            ["ORIGN[color]blue", "DEST[color]blue"],
             [originCell, destinationCell],
             ["RUNWAY", "FLT NO"],
             ["", flightNoCell],
             ["REQUEST", "CO ROUTE"],
             ["<SEND", coRouteCell],
-            ["-------------------------"],
+            ["-------------------------[color]blue"],
             [""],
             [""],
             [""],

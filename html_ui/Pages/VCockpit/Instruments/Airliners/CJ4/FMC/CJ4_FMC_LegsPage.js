@@ -175,10 +175,10 @@ class CJ4_FMC_LegsPage {
             };
         }
         fmc.setTemplate([
-            ["ACT RTE 1 LEGS", currentPage.toFixed(0), pageCount.toFixed(0)],
+            ["ACT LEGS[color]blue", currentPage.toFixed(0) + "[color]blue", pageCount.toFixed(0)] + "[color]blue",
             ...rows,
-            ["-------------------------"],
-            ["<RTE 2 LEGS", isMapModePlan ? "STEP>" : "RTE DATA>"]
+            ["-------------------------[color]blue"],
+            ["<RWY UPDATE", isMapModePlan ? "STEP>" : "LEG WIND>"]
         ]);
         fmc.onPrevPage = () => {
             if (currentPage > 1) {

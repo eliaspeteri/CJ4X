@@ -1,10 +1,10 @@
-class FMSMCDUMenuPage {
-        static ShowPage(fms) {
-        fms.clearDisplay();
-        fms.setTemplate([
+class CJ4_FMC_MCDUMenuPage {
+        static ShowPage(fmc) {
+        fmc.clearDisplay();
+        fmc.setTemplate([
             ["MCDU MENU[color]blue"],
             ["",""],
-            ["","FMS RESET>"],
+            ["","fmc RESET>"],
             ["",""],
             ["",""],
             ["",""],
@@ -16,11 +16,11 @@ class FMSMCDUMenuPage {
             ["",""],
             ["","LOGOFF>"]
         ])
-        fms.onRightInput[0] = () => {
-            FMSResetControlPage.ShowPage(fms);
+        fmc.onRightInput[0] = () => {
+            fmcResetControlPage.ShowPage(fmc);
         }
-        fms.onRightInput[5] = () => {
-            FMSLogOffPage.ShowPage(fms);
+        fmc.onRightInput[5] = () => {
+            fmcLogOffPage.ShowPage(fmc);
         }
     }
 }

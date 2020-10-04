@@ -1,0 +1,35 @@
+**FMC PAGES**
+- IDX -- Working on
+    - MCDU MENU
+    - STATUS -- Working on
+    - POS INIT --Asobo
+    - VOR CONTROL
+    - GPS CONTROL
+    - GPS POS
+    - FREQUENCY
+    - FIX
+    - HOLD
+    - PROGRESS -Asobo (can't find in the aircraft)
+    - SEC PLN
+    - FMS CONTROL
+    - ROUTE MENU
+    - DATA BASE
+    - DEFAULTS
+    - ARR DATA
+    - TEMP COMP
+- SELECT WPT
+- SELECT APT
+- FPLN
+- LEGS --Asobo
+- PERF
+    - PERF INIT
+    - VNAV SETUP
+    - FUEL MGMT
+    - FLIGHT LOG
+- DEP ARR --Asobo
+- DIR --Asobo
+- TUN -- Working on
+- MSG
+- MFD MENU
+- MFD ADV
+- MFD DATA

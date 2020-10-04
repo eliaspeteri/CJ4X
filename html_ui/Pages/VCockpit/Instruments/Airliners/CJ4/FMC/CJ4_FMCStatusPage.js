@@ -1,7 +1,7 @@
-class FMSStatusPage {
-    static ShowPage(fms) {
-        fms.clearDisplay();
-        fms.setTemplate([
+class CJ4_FMC_StatusPage {
+    static ShowPage(fmc) {
+        fmc.clearDisplay();
+        fmc.setTemplate([
             ["STATUS"],
             ["NAV DATA[color]blue",""],
             ["WORLD",""],
@@ -17,11 +17,11 @@ class FMSStatusPage {
             ["<INDEX","POS INIT>"]
         ])
 
-        fms.onLeftInput[5] = () => {
-            FMSIndexPage.ShowPage1(fms);
+        fmc.onLeftInput[5] = () => {
+            fmcIndexPage.ShowPage1(fmc);
         }
-        fms.onRightInput[5] = () => {
-            FMSPOSInitPage.ShowPage(fms);
+        fmc.onRightInput[5] = () => {
+            fmcPOSInitPage.ShowPage(fmc);
         }
     }
 }

@@ -37,7 +37,7 @@ class CJ4_FMC_SelectWptPage {
             }
         }
         fmc.setTemplate([
-            ["SELECT DESIRED WPT", (page + 1).toFixed(0), (waypoints.length / 5).toFixed(0)],
+            ["SELECT WPT[color]blue", (page + 1).toFixed(0) + "[color]blue", (waypoints.length / 5).toFixed(0) + "[color]blue"],
             ...rows,
             [""]
         ]);

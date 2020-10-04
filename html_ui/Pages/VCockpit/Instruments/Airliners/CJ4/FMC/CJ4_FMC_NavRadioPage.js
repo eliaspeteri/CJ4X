@@ -223,7 +223,7 @@ class CJ4_FMC_NavRadioPage {
             }
         };
         fmc.setTemplate([
-            ["RADIO TUNING", "1", "2"],
+            ["RADIO TUNING[color]blue", "1[color]blue", "2[color]blue"],
             ["COM 1", "COM 2"],
             [vhf1FrequencyCell + "[color]green", vhf2FrequencyCell + "[color]green"],
             ["RCL 1", "PRE 2"],
@@ -231,11 +231,11 @@ class CJ4_FMC_NavRadioPage {
             ["NAV 1", "NAV 2"],
             [vor1FrequencyCell + "[color]green", vor2FrequencyCell + "[color]green"],
             ["NAV 1", "NAV 2", "-- MODE --"],
-            ["AUTO/man", "AUTO/man"],
+            ["AUTO[color]blue" + "/man", "AUTO[color]blue" + "/man"],
             ["", "ADF"],
             ["", adfFrequencyCell + "[color]green"],
             ["ATC 1", "ATC 2"],
-            [atc1FrequencyCell + "[color]green", ""],
+            [atc1FrequencyCell, ""],
             [""]
         ]);
         fmc.onPrevPage = () => {
@@ -311,7 +311,7 @@ class CJ4_FMC_NavRadioPage {
             }
         };
         fmc.setTemplate([
-            ["RADIO TUNING", "2", "2"],
+            ["RADIO TUNING[color]blue", "2[color]blue", "2[color]blue"],
             ["", "FLIGHT ID"],
             ["", "N5DX29"],
             [""],

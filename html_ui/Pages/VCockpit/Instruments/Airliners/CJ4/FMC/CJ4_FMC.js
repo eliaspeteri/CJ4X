@@ -35,6 +35,7 @@ class CJ4_FMC extends FMCMainDisplay {
         this.onDepArr = () => { CJ4_FMC_DepArrPage.ShowPage1(this); };
         this.onDsplMenu = () => { CJ4_FMC_InitRefIndexPage.ShowPage1(this); };
         this.onTun = () => { CJ4_FMC_NavRadioPage.ShowPage1(this); };
+        this.onIdx = () => { CJ4_FMC_IndexPage.ShowPage1(this); };
         this.onExec = () => {
             if (this.getIsRouteActivated()) {
                 this.insertTemporaryFlightPlan();
@@ -79,6 +80,11 @@ class CJ4_FMC extends FMCMainDisplay {
         }
         if (input === "DIR") {
             CJ4_FMC_DirectToPage.ShowPage(this);
+        }
+        if (input === "IDX") {
+            if (this.onIdx) {
+                this.onIdx();
+            }
         }
         if (input === "EXEC") {
             if (this.onExec) {

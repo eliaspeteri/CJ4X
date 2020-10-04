@@ -18,12 +18,12 @@ class CJ4_FMC_DepArrPage {
             };
         }
         fmc.setTemplate([
-            ["DEP/ARR INDEX"],
-            ["", "", "ACT FPLN"],
+            ["DEP/ARR INDEX[color]blue"],
+            ["", "", "ACT FPLN[color]blue"],
             rowOrigin,
             [""],
             rowDestination,
-            [""],
+            ["","","SEC FLPN[color]blue"],
             [""],
             [""],
             [""],
@@ -164,11 +164,11 @@ class CJ4_FMC_DepArrPage {
         let rowsCount = Math.max(displayableRunwaysCount, displayableDeparturesCount);
         let pageCount = Math.floor(rowsCount / 5) + 1;
         fmc.setTemplate([
-            [originIdent + " DEPARTURES", currentPage.toFixed(0), pageCount.toFixed(0)],
-            ["SIDS", "RUNWAYS", "RTE 1"],
+            [originIdent + " DEPART[color]blue", currentPage.toFixed(0), pageCount.toFixed(0)],
+            ["SIDS[color]blue", "RWYS[color]blue", "ACT FPLN[color]blue"],
             ...rows,
-            ["-------------------------"],
-            ["<INDEX", "ROUTE>"]
+            ["-------------------------[color]blue"],
+            ["<DEP/ARR IDX", "FPLN>"]
         ]);
         fmc.onLeftInput[5] = () => { CJ4_FMC_DepArrPage.ShowPage1(fmc); };
         fmc.onRightInput[5] = () => { CJ4_FMC_RoutePage.ShowPage1(fmc); };
@@ -337,14 +337,13 @@ class CJ4_FMC_DepArrPage {
         let rowsCount = Math.max(displayableApproachesCount, displayableArrivalsCount);
         let pageCount = Math.floor(rowsCount / 5) + 1;
         fmc.setTemplate([
-            [destinationIdent + " ARRIVALS", currentPage.toFixed(0), pageCount.toFixed(0)],
-            ["STAR", "APPROACH", "RTE 1"],
+            [destinationIdent + " ARRIVAL[color]blue", currentPage.toFixed(0), pageCount.toFixed(0)],
+            ["STARS[color]blue", "APPR[color]blue", "ACT FPLN[color]blue"],
             ...rows,
             ["-------------------------"],
-            ["<INDEX", "ROUTE>"]
+            ["<DEP/ARR IDX", ""]
         ]);
         fmc.onLeftInput[5] = () => { CJ4_FMC_DepArrPage.ShowPage1(fmc); };
-        fmc.onRightInput[5] = () => { CJ4_FMC_RoutePage.ShowPage1(fmc); };
         fmc.onPrevPage = () => {
             if (currentPage > 0) {
                 CJ4_FMC_DepArrPage.ShowArrivalPage(fmc, currentPage - 1);

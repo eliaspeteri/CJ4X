@@ -1,8 +1,8 @@
-class FMSDefaultsPage {
-    static ShowPage1(fms) {
+class CJ4_FMC_DefaultsPage {
+    static ShowPage1(fmc) {
         let bow = 10800, avg_pass_wt = 170, taxi_fuel = 50, res_fuel = 200, max_map_symb = 40;
-        fms.clearDisplay();
-        fms.setTemplate([
+        fmc.clearDisplay();
+        fmc.setTemplate([
             ["DEFAULTS[color]blue","1[color]blue","3[color]blue"],
             ["BOW[color]blue",""],
             [bow,""],
@@ -18,10 +18,10 @@ class FMSDefaultsPage {
             [max_map_symb,""]
         ])
     }
-    static ShowPage2(fms) {
+    static ShowPage2(fmc) {
         let clb_spd = 222, crz_spd = 222, dct_spd = 268, dct_angle = 3.0, spd_limit = 250, trans_alt = 18000;
-        fms.clearDisplay();
-        fms.setTemplate([
+        fmc.clearDisplay();
+        fmc.setTemplate([
             ["DEFAULTS[color]blue","2[color]blue","3[color]blue"],
             ["CLIMB SPEED[color]blue",""],
             [clb_spd,""],
@@ -37,10 +37,10 @@ class FMSDefaultsPage {
             [trans_alt,""]
         ])
     }
-    static ShowPage3(fms) {
+    static ShowPage3(fmc) {
 
-        fms.clearDisplay();
-        fms.setTemplate([
+        fmc.clearDisplay();
+        fmc.setTemplate([
             ["DEFAULTS[color]blue","1[color]blue","3[color]blue"],
             ["REDUCED HALF BANK[color]blue",""],
             ["",""],

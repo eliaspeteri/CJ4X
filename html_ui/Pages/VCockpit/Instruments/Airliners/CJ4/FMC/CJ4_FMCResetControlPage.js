@@ -1,7 +1,7 @@
-class FMSResetControlPage {
-    static ShowPage(fms) {
-        fms.clearDisplay();
-        fms.setTemplate([
+class CJ4_FMC_ResetControlPage {
+    static ShowPage(fmc) {
+        fmc.clearDisplay();
+        fmc.setTemplate([
             ["RESET CONTROL[color]blue"],
             ["",""],
             ["",""],
