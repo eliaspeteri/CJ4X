@@ -1,0 +1,31 @@
+<AssetPackage Name="cessnacj4" Version="0.1.0">
+	<ItemSettings>
+		<ContentType>UNKNOWN</ContentType>
+		<Title/>
+		<Manufacturer/>
+		<Creator/>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\cessnacj4\ContentInfo</AssetDir>
+			<OutputDir>ContentInfo\cessnacj4</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="cessnacj4">
+			<Type>SimObject</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir/>
+			<OutputDir/>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+

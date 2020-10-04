@@ -1,0 +1,81 @@
+/*! *****************************************************************************
+    Author: dga711  in 2020
+    https://github.com/dga711/msfs-webui-devkit
+***************************************************************************** */
+
+@font-face {
+    font-family: "Consolas";
+    src: url("/Fonts/consola.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#DebugPanel {
+    background-color: cornflowerblue;
+    opacity: 0.8;
+    width: 40%;
+    min-height: 32px;
+    height: auto;
+    font-size: 14px;
+}
+
+#DebugPanel.collapsed {
+    width: auto;
+    opacity: 0.3;
+}
+
+.Console {
+    font-size: 13px;
+    font-family: "Consolas";
+    min-height: 50px;
+    padding: 4px;
+    margin: 4px;
+    width: 98%;
+    overflow: auto;
+}
+
+#debugContent.collapsed {
+    display: none;
+}
+
+.debugButton {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+}
+
+#debugHeader {
+    background-color: cornflowerblue;
+    vertical-align: middle;
+    height: 28px;
+    padding: 8px;
+}
+
+#debugActions {
+    margin-left: 10px;
+}
+
+#debugHeader button {
+    width: 20px;
+    margin-top: -1px;
+}
+
+.inspector-highlight {
+    border: solid 2px pink;
+}
+
+.inspector-tooltip {
+    position: absolute;
+    display: block;
+    background-color: pink;
+    color: black;
+    z-index: 120000;
+    pointer-events: none;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.hidden {
+    display: none;
+}

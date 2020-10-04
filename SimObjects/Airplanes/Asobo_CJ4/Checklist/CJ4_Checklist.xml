@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<SimBase.Document Type="Checklist" version="1,0">
+  <Checklist.Checklist>
+    <IncludeCheckpointLibrary FileName="CheckpointsLibrary\\Asobo_DefaultCheckpointLibrary.xml"/>
+
+    <Step ChecklistStepId="PREFLIGHT_GATE">
+      <!-- Before starting engine -->
+      <Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_STARTING_ENGINE">
+        <Checkpoint ReferenceId="Parking_Brake_Set">
+          <ForceCamera name="Instrument04"/>
+        </Checkpoint>
+        <Checkpoint ReferenceId="POWER_LEVERS_IDLE_2ENGINES">
+			<ForceCamera name="Instrument05"/>
+		</Checkpoint>
+        <Checkpoint ReferenceId="GENERATOR_MAIN_2">
+          <CheckpointDesc SubjectTT="TT:GAME.CHECKLIST_GENERATOR_SWITCHES" ExpectationTT="TT:GAME.CHECKLIST_ON"/>
+        </Checkpoint>
+        <Checkpoint ReferenceId="Battery_Switch_On_CJ4"/>
+
+        <Checkpoint ReferenceId="Avionics_Bus_Switch_On">
+			<CheckpointDesc SubjectTT="TT:GAME.CHECKLIST_AVIONICS_MASTER_SWITCH" ExpectationTT="TT:GAME.CHECKLIST_DISPATCH"/>
+			<Clue name="TT:CLUE.AVIONICS_MASTER_SWITCH_DISPATCH"/>
+			<SetTemplateValue Id="Circuit Avionics">
+			<Operator OpType="AND">
+				<Val SimVarName="CIRCUIT AVIONICS ON" Units="Boolean"/>
+				<Operator OpType="EQUAL">
+					<Val Code="(L:XMLVAR_AVIONICS_IsComposite)"/>
+					<Val Value="1"/>
+				</Operator>
+			</Operator>
+			</SetTemplateValue>
+			<SetTemplateAction Id="Toggle Avionics Bus" Copilot="True" Condition="TestValueFalse" Once="true" Code="(&gt;K:AVIONICS_MASTER_1_OFF) (&gt;K:AVIONICS_MASTER_2_ON) 1 (&gt;L:XMLVAR_AVIONICS_IsComposite)"/>
+        </Checkpoint>
+      </Page>
+
+      <!-- Starting Engine -->
+      <Page SubjectTT="TT:GAME.CHECKLIST_STARTING_ENGINE">
+        <Checkpoint ReferenceId="RIGHT_ENGINE_STARTER_ON">
+        <ForceCamera name="Instrument06"/>
+        </Checkpoint>
+        <Checkpoint ReferenceId="RIGHT_ENG_RUN_BUTTON_RUN_WHEN_N2_20">
+			<ForceCamera name="Instrument05"/>
+		</Checkpoint>
+        <Checkpoint ReferenceId="ITT_AND_N1_MONITOR">
+          <ForceCamera name="Instrument01"/>
+          <Instrument Id="HTML:CJ4_MFD:N1"/>
+          <Instrument Id="HTML:CJ4_MFD:ITT"/>
+        </Checkpoint>
+        <Checkpoint ReferenceId="LEFT_ENGINE_START_REPEAT_PROCEDURE_JET">
+          <ForceCamera name="Instrument06"/>
+          <Instrument id="ENGINE_Switch_Starter1"/>
+        </Checkpoint>
+      </Page>
+
+      <!-- After starting engine 1/2 -->
+      <Page SubjectTT="TT:GAME.CHECKLIST_AFTER_STARTING_ENGINE_1">
+        <Checkpoint ReferenceId="Avionics_Bus_Switch_On">
+
+          <SetTemplateValue Id="Circuit Avionics">
+            <Operator OpType="AND">
+              <Val SimVarName="CIRCUIT AVIONICS ON" Units="Boolean"/>
+              <Operator OpType="EQUAL">
+                <Val Code="(L:XMLVAR_AVIONICS_IsComposite)"/>
+                <Val Value="0"/>
+              </Operator>
+            </Operator>
+          </SetTemplateValue>
+
+          <SetTemplateAction Id="Toggle Avionics Bus" Copilot="True" Condition="TestValueFalse" Once="true" Code="(&gt;K:AVIONICS_MASTER_1_ON) (&gt;K:AVIONICS_MASTER_2_ON) 0 (&gt;L:XMLVAR_AVIONICS_IsComposite)" />
+        </Checkpoint>
+        <Checkpoint ReferenceId="LIGHTS_AS_REQUIRED_CUSTOM">
+			<SetTemplateValue Id="LIGHT_SWITCH_ON">
+				<Operator OpType="AND">
+					<Operator OpType="AND">
+						<Operator OpType="AND">
+							<Val SimVarName="LIGHT BEACON" Units="Boolean"/>
+							<Val SimVarName="LIGHT NAV" Units="Boolean"/>
+						</Operator>
+						<Operator OpType="AND">
+							<Val SimVarName="LIGHT STROBE" Units="Boolean"/>
+							<Val SimVarName="LIGHT TAXI" Units="Boolean"/>
+						</Operator>
+					</Operator>
+					<Val SimVarName="LIGHT WING" Units="Boolean"/>
+				</Operator>
+			</SetTemplateValue>
+			<SetTemplateAction Id="TOGGLE_LIGHT_SWITCH" Copilot="True" Condition="TestValueFalse" Once="True" Code="(A:LIGHT BEACON, Bool) ! if{ 0 (&gt;K:TOGGLE_BEACON_LIGHTS) } 
+			(A:LIGHT NAV, Bool) ! if{ 0 (&gt;K:TOGGLE_NAV_LIGHTS) } 
+			(A:LIGHT STROBE, Bool) ! if{ 0 (&gt;K:STROBES_TOGGLE) } 
+			(A:LIGHT TAXI, Bool) ! if{ 0 (&gt;K:TOGGLE_TAXI_LIGHTS) } 
+			(A:LIGHT WING, Bool) ! if{ 0 (&gt;K:TOGGLE_WING_LIGHTS) } "/>
+          <Instrument Id="LIGHTING_Push_Light_Strobe"/>
+          <Instrument Id="LIGHTING_Push_Light_Beacon"/>
+          <Instrument Id="LIGHTING_Push_Light_Taxi"/>
+          <Instrument Id="LIGHTING_Push_Light_Navigation"/>
+		  <Instrument Id="LIGHTING_Push_Light_Wing"/>
+          <ForceCamera name="Instrument03"/>
+        </Checkpoint>
+        <Checkpoint ReferenceId="Parking_Brake_Release">
+        <ForceCamera name="Instrument04"/>
+        </Checkpoint>
+      </Page>
+    </Step>
+
+    <Step ChecklistStepId="PREFLIGHT_TAXI_OUT">
+    </Step>
+
+    <Step ChecklistStepId="FLIGHT_RUNWAY">
+    </Step>
+
+    <Step ChecklistStepId="FLIGHT_TAKEOFF">
+    </Step>
+
+    <Step ChecklistStepId="FLIGHT_CRUISE">
+    </Step>
+
+    <Step ChecklistStepId="FLIGHT_DESCENT">
+    </Step>
+
+    <Step ChecklistStepId="LANDING_APPROACH">
+    </Step>
+
+    <Step ChecklistStepId="LANDING_TOUCHDOWN">
+    </Step>
+
+    <Step ChecklistStepId="LANDING_GROUNDROLL">
+    </Step>
+
+    <Step ChecklistStepId="LANDING_TAXI_IN">
+    </Step>
+
+    <Step ChecklistStepId="LANDING_GATE">
+    </Step>
+
+  </Checklist.Checklist>
+</SimBase.Document>
