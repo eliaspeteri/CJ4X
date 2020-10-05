@@ -25,8 +25,15 @@ class CJ4_FMC extends FMCMainDisplay {
                     this._registered = true;
                 });
             });
+            
         }
+        // ADDED FROM WEBUI-KIT FOR DEVELOPER PURPOSES
+        Include.addScript("/JS/debug.js", function () {
+            g_modDebugMgr.AddConsole(null);
+        });
     }
+
+    
     Init() {
         super.Init();
         this.maxCruiseFL = 450;
@@ -35,8 +42,11 @@ class CJ4_FMC extends FMCMainDisplay {
         this.onDepArr = () => { CJ4_FMC_DepArrPage.ShowPage1(this); };
         this.onDsplMenu = () => { CJ4_FMC_InitRefIndexPage.ShowPage1(this); };
         this.onTun = () => { CJ4_FMC_NavRadioPage.ShowPage1(this); };
+        this.onMsg = () => { CJ4_FMC_MsgPage.ShowPage1(this); };        // MODIFIED
         this.onIdx = () => { CJ4_FMC_IndexPage.ShowPage1(this); };      // MODIFIED
         this.onPerf = () => { CJ4_FMC_PerfMenuPage.ShowPage1(this); };  // MODIFIED
+        this.onMfdData = () => { CJ4_FMC_MfdDataPage.ShowPage1(this); }; // MODIFIED
+        this.onMfdAdv = () => { CJ4_FMC_MfdAdvPage.ShowPage1(this); };  // MODIFIED
         this.onExec = () => {
             if (this.getIsRouteActivated()) {
                 this.insertTemporaryFlightPlan();
@@ -83,11 +93,36 @@ class CJ4_FMC extends FMCMainDisplay {
             CJ4_FMC_DirectToPage.ShowPage(this);
         }
         // MODIFIED
+        if (input === "MSG") {
+            if (this.onMsg) {
+                this.onMsg();
+            }
+        }
+        // MODIFIED
         if (input === "IDX") {
             if (this.onIdx) {
                 this.onIdx();
             }
         }
+        // MODIFIED
+        if (input === "PERF") {
+            if (this.onPerf) {
+                this.onPerf();
+            }
+        }
+        // MODIFIED
+        if (input === "MFD_ADV") {
+            if (this.onMfdAdv) {
+                this.onMfdAdv();
+            }
+        }
+        // MODIFIED
+        if (input === "MFD_DATA") {
+            if (this.onMfdData) {
+                this.onMfdData();
+            }
+        }
+
         if (input === "EXEC") {
             if (this.onExec) {
                 this.onExec();

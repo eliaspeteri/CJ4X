@@ -96,9 +96,9 @@ class CJ4_FMC_RoutePage {
             ["-------------------------[color]blue"],
             [""],
             [""],
+            ["<COPY ACTIVE"],
             [""],
-            [""],
-            ["<RTE 2", activateCell]
+            ["<SEC FPLN", activateCell]
         ]);
         fmc.onRightInput[5] = () => {
             fmc.insertTemporaryFlightPlan(() => {
@@ -203,7 +203,7 @@ class CJ4_FMC_RoutePage {
             };
         }
         fmc.setTemplate([
-            ["RTE 1", page.toFixed(0), pageCount.toFixed(0)],
+            ["ACT FPLN[color]blue", page.toFixed(0), pageCount.toFixed(0)],
             ["VIA", "TO"],
             rows[0],
             [""],
@@ -215,7 +215,7 @@ class CJ4_FMC_RoutePage {
             [""],
             rows[4],
             [""],
-            ["<RTE 2", activateCell]
+            ["<SEC FPLN", activateCell]
         ]);
         fmc.onPrevPage = () => {
             if (offset === 0) {

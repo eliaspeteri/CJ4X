@@ -19,7 +19,7 @@ class CJ4_FMC_PerfInitPage {
         // }
         let crzAltCell = "□□□□□";
         if (fmc.cruiseFlightLevel) {
-            crzAltCell = fmc.cruiseFlightLevel + "FL";
+            crzAltCell = "FL" + fmc.cruiseFlightLevel;
         }
         fmc.onRightInput[0] = () => {
             let value = fmc.inOut;
@@ -103,7 +103,7 @@ class CJ4_FMC_PerfInitPage {
             ["4/170lb",""],
             ["CARGO[color]blue","= ZFW[color]blue"],
             [" 100 lb",zfwCell],
-            ["SENSED FUEL[color]blue","= GWT[color blue]"],
+            ["SENSED FUEL[color]blue","= GWT[color]blue"],
             [fuelCell,grWtCell],
             ["",""],
             [""],
@@ -111,6 +111,7 @@ class CJ4_FMC_PerfInitPage {
             ["","VNAV SETUP>"]
         ]);
         // fmc.onLeftInput[5] = () => { CJ4_FMC_InitRefIndexPage.ShowPage1(fmc); };
+        fmc.onRightInput[5] = () => { CJ4_FMC_VnavSetupPage.ShowPage1(fmc); };
         fmc.updateSideButtonActiveStatus();
     }
 }

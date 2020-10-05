@@ -1,10 +1,10 @@
 class CJ4_FMC_MCDUMenuPage {
-        static ShowPage(fmc) {
+        static ShowPage1(fmc) {
         fmc.clearDisplay();
         fmc.setTemplate([
             ["MCDU MENU[color]blue"],
             ["",""],
-            ["","fmc RESET>"],
+            ["","FMS RESET>"],
             ["",""],
             ["",""],
             ["",""],

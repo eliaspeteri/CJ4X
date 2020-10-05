@@ -1,5 +1,5 @@
 class CJ4_FMC_StatusPage {
-    static ShowPage(fmc) {
+    static ShowPage1(fmc) {
         fmc.clearDisplay();
         fmc.setTemplate([
             ["STATUS"],
@@ -18,10 +18,10 @@ class CJ4_FMC_StatusPage {
         ])
 
         fmc.onLeftInput[5] = () => {
-            fmcIndexPage.ShowPage1(fmc);
+            CJ4_FMC_IndexPage.ShowPage1(fmc);
         }
         fmc.onRightInput[5] = () => {
-            fmcPOSInitPage.ShowPage(fmc);
+            CJ4_FMC_PosInitPage.ShowPage1(fmc);
         }
     }
 }

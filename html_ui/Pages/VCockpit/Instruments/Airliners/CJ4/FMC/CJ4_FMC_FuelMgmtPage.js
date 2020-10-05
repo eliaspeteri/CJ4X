@@ -16,7 +16,7 @@ class CJ4_FMC_FuelMgmtPage {
                 [""],
                 [""],
                 [""],
-                ["measured/MANUAL[color]green"],
+                ["measured/" + "MANUAL[color]green",""],
                 ["","PERF MENU>"]
             ]);
         }

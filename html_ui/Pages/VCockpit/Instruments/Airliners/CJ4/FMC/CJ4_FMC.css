@@ -28,6 +28,13 @@
   display: none; }
 
 @font-face {
+  font-family: "Futura";
+  src: url("/Fonts/futura light bt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Roboto";
   src: url("/Fonts/RobotoMono-Medium.ttf") format("truetype");
   font-weight: normal;

@@ -1,7 +1,7 @@
 class CJ4_FMC_PerfMenuPage {
-    static ShowDisplay(fms) {
-        fms.clearDisplay();
-        fms.setTemplate([
+    static ShowPage1(fmc) {
+        fmc.clearDisplay();
+        fmc.setTemplate([
             ["PERF MENU[color]blue"],
             [""],
             ["<PERF INIT", "FUEL MGMT>"],
@@ -12,7 +12,7 @@ class CJ4_FMC_PerfMenuPage {
             [""],
             [""],
             [""],
-            ["ENABLE[color]green/disable",""],
+            ["ENABLE[color]green" + "/disable",""],
             [""],
             ["<RESUME 250 kt",""]
         ]);

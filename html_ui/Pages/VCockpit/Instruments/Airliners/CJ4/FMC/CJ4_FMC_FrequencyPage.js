@@ -1,4 +1,4 @@
-class CJ4_FMC_VORCtlPage {
+class CJ4_FMC_FrequencyPage {
     static ShowPage1(fmc) {
         fmc.clearDisplay();
         fmc.setTemplate([

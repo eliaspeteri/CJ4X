@@ -11,24 +11,24 @@ class CJ4_FMC_IndexPage {
             ["<DATALINK","FIX>"],
             [""],
             ["<POS INIT","HOLD>"],
-            ["FMS11[color]blue",""],
+            ["FMS 1[color]blue",""],
             ["<VOR CTL","PROG>"],
             ["FMS 1[color]blue",""],
             ["<GPS CTL","SEC FPLN>"]
         ]);
 
-        fmc.onLeftInput[0] = () => { CJ4_FMCStatusPage.ShowPage(fmc); };
-        fmc.onLeftInput[1] = () => { CJ4_FMCMCDUMenuPage.ShowPage(fmc); };
-        fmc.onLeftInput[2] = () => { CJ4_FMCDatalinkPage.ShowPage(fmc); };
-        fmc.onLeftInput[3] = () => { CJ4_FMCPosInitPage.ShowPage(fmc); };
-        fmc.onLeftInput[4] = () => { CJ4_FMCVORCtlPage.ShowPage(fmc); };
-        fmc.onLeftInput[5] = () => { CJ4_FMCGPSCtlPage.ShowPage(fmc); };
-        fmc.onRightInput[0] = () => { CJ4_FMCGPS1PosPage.ShowPage(fmc); };
-        fmc.onRightInput[1] = () => { CJ4_FMCFrequencyPage.ShowPage(fmc); };
-        fmc.onRightInput[2] = () => { CJ4_FMCFixPage.ShowPage(fmc); };
-        fmc.onRightInput[3] = () => { CJ4_FMCHoldPage.ShowPage(fmc); };
-        fmc.onRightInput[4] = () => { CJ4_FMCProgPage.ShowPage(fmc); };
-        fmc.onRightInput[5] = () => { CJ4_FMCSecFplnPage.ShowPage(fmc); };
+        fmc.onLeftInput[0] = () => { CJ4_FMC_StatusPage.ShowPage1(fmc); };
+        fmc.onLeftInput[1] = () => { CJ4_FMC_MCDUMenuPage.ShowPage1(fmc); };
+        fmc.onLeftInput[2] = () => { CJ4_FMC_DatalinkPage.ShowPage1(fmc); };
+        fmc.onLeftInput[3] = () => { CJ4_FMC_PosInitPage.ShowPage1(fmc); };
+        fmc.onLeftInput[4] = () => { CJ4_FMC_VORCtlPage.ShowPage1(fmc); };
+        fmc.onLeftInput[5] = () => { CJ4_FMC_GPSCtlPage.ShowPage1(fmc); };
+        fmc.onRightInput[0] = () => { CJ4_FMC_GPS1PosPage.ShowPage1(fmc); };
+        fmc.onRightInput[1] = () => { CJ4_FMC_FrequencyPage.ShowPage1(fmc); };
+        fmc.onRightInput[2] = () => { CJ4_FMC_FixPage.ShowPage1(fmc); };
+        fmc.onRightInput[3] = () => { CJ4_FMC_HoldPage.ShowPage1(fmc); };
+        fmc.onRightInput[4] = () => { CJ4_FMC_ProgressPage.ShowPage1(fmc); };
+        fmc.onRightInput[5] = () => { CJ4_FMC_SecFplnPage.ShowPage1(fmc); };
 
         fmc.onPrevPage = () => {
             CJ4_FMC_IndexPage.ShowPage1(fmc);
