@@ -48,7 +48,7 @@ class CJ4_FMC_DirectToPage {
             };
         }
         fmc.setTemplate([
-            ["ACT DIRECT-TO"],
+            ["ACT DIRECT-TO[color]blue"],
             ["WAYPOINT", "DIST", "UTC"],
             ["[" + directWaypointCell + "][color]blue", "---", "----"],
             ["F-PLN WPTS"],

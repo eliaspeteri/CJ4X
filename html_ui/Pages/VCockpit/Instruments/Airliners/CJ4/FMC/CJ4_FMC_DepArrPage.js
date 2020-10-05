@@ -4,7 +4,7 @@ class CJ4_FMC_DepArrPage {
         let rowOrigin = [""];
         let origin = fmc.flightPlanManager.getOrigin();
         if (origin) {
-            rowOrigin = ["<DEP", "", origin.ident];
+            rowOrigin = ["<DEP", "ARR>", origin.ident];
             fmc.onLeftInput[0] = () => {
                 CJ4_FMC_DepArrPage.ShowDeparturePage(fmc);
             };
@@ -12,7 +12,7 @@ class CJ4_FMC_DepArrPage {
         let rowDestination = [""];
         let destination = fmc.flightPlanManager.getDestination();
         if (destination) {
-            rowDestination = ["", "<ARR", destination.ident];
+            rowDestination = ["<DEP", "ARR>", destination.ident];
             fmc.onRightInput[1] = () => {
                 CJ4_FMC_DepArrPage.ShowArrivalPage(fmc);
             };

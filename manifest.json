@@ -1,16 +1,16 @@
 {
-    "creator": "dga711", 
+    "creator": "dga711",
     "release_notes": {
         "neutral": {
-            "LastUpdate": "", 
+            "LastUpdate": "",
             "OlderHistory": ""
         }
-    }, 
-    "package_version": "0.8.2", 
-    "title": "web ui devkit", 
-    "dependencies": [], 
-    "content_type": "CUSTOM", 
-    "total_package_size": "00000000000390822351", 
-    "minimum_game_version": "1.9.2", 
+    },
+    "package_version": "0.8.2",
+    "title": "web ui devkit",
+    "dependencies": [],
+    "content_type": "CUSTOM",
+    "total_package_size": "00000000000391537555",
+    "minimum_game_version": "1.9.2",
     "manufacturer": ""
 }

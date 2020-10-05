@@ -175,7 +175,7 @@ class CJ4_FMC_LegsPage {
             };
         }
         fmc.setTemplate([
-            ["ACT LEGS[color]blue", currentPage.toFixed(0) + "[color]blue", pageCount.toFixed(0)] + "[color]blue",
+            ["ACT LEGS[color]blue",  currentPage.toFixed(0) + "[color]blue", pageCount.toFixed(0) + "[color]blue"],
             ...rows,
             ["-------------------------[color]blue"],
             ["<RWY UPDATE", isMapModePlan ? "STEP>" : "LEG WIND>"]
